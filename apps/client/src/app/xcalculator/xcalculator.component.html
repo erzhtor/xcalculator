@@ -1,9 +1,14 @@
 <div class="input-container">
-  <input [class.input]="true" placeholder="Type an expression" />
+  <input [class.input]="true" placeholder="Type an expression" [(ngModel)]="userText" (keyup.enter)="calculate()" />
 </div>
-<div class="parsed-expression">
-  1 2 + 3 *
+<div *ngIf="!calculating">
+  <div class="parsed-expression">
+    <i>Postfix notation: </i>{{postfixedText}}
+  </div>
+  <div class="result">
+    <i>Result: </i>{{resultText}}
+  </div>
 </div>
-<div class="result">
-  10
+<div *ngIf="calculating" [style.font-size]="'30px'">
+  <br/> calculating...
 </div>

@@ -10,6 +10,7 @@ input {
   text-align: center;
   font-size: 30px;
   border-style: none;
+  box-shadow: 10px 10px 5px #888888;
 }
 
 .parsed-expression {

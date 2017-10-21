@@ -9,7 +9,7 @@ import { XCalculatorModule } from './xcalculator/xcalculator.module';
     ],
     imports: [
         BrowserModule,
-        XCalculatorModule
+        XCalculatorModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
