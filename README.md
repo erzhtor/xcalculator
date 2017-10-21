@@ -1,1 +1,15 @@
-docker-example
+# X (Expression) Calculator
+
+### Simple expression calculator consisting of 3 microservice applications
+
+* Frontend app: build using **Angular ^4**
+* Expression to postfix notation converter:
+* Postfix notation calculator
+
+**_All apps run in docker containers and overall service app is controlled via docker swarm_**
+
+## Tech stack
+* **Docker**
+* **Angular ^4**
+* **Nodejs + Koa**
+* **Typescript ^2**
