@@ -13,5 +13,5 @@ _**NOT READY YET (will be removed when finished)**_
 ## Tech stack
 * **Docker**
 * **Angular ^4**
-* **Nodejs + Koa**
+* **Nodejs + Koa ^2**
 * **Typescript ^2**
