@@ -1,10 +1,14 @@
 import * as Koa from 'koa';
 import * as bodyparser from 'koa-bodyparser'
+import * as cors from 'koa2-cors';
 
 import { infixToPostfix } from "./infix-to-postfix";
 import { stringToInfix } from "./string-to-infix";
 
 const app = new Koa();
+app.use(cors({
+    origin: '*'
+}))
 app.use(bodyparser());
 app.use((ctx, next) => {
     try {

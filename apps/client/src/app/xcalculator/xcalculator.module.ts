@@ -14,6 +14,6 @@ import { XCalculatorComponent } from './xcalculator.component';
     ],
     exports: [XCalculatorComponent],
     declarations: [XCalculatorComponent],
-    providers: [BackendMockService, { provide: BackendService, useExisting: BackendMockService }]
+    providers: [BackendService]
 })
 export class XCalculatorModule { }

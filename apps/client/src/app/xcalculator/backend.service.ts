@@ -8,15 +8,33 @@ export class BackendService {
 
     convertToPostfix(expression: string): Promise<(string | number)[]> {
         return this.http.
-            post<(string | number)[]>('/api/toPostfix', {
+            post<any>('//localhost:3000', {
                 expression
-            }).toPromise();
+            }).
+            toPromise().
+            then((response) => {
+                const { status, data } = response;
+                if (status === 'success') {
+                    return data;
+                } else {
+                    throw new Error('error while converting to postfix');
+                }
+            });
     }
 
     calculateExpression(postfixExpression: (string | number)[]): Promise<string> {
         return this.http.
-            post<string>('/api/calculate', {
-                epxression: postfixExpression
-            }).toPromise();
+            post<any>('//localhost:3001', {
+                expression: postfixExpression
+            }).
+            toPromise().
+            then(response => {
+                const { status, data } = response;
+                if (status === 'success') {
+                    return data;
+                } else {
+                    throw new Error('error while calculating postfix notation');
+                }
+            });
     }
 }
