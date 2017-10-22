@@ -1,14 +1,19 @@
 <div class="input-container">
   <input [class.input]="true" placeholder="Type an expression" [(ngModel)]="userText" (keyup.enter)="calculate()" />
 </div>
-<div *ngIf="!calculating">
-  <div class="parsed-expression">
-    <i>Postfix notation: </i>{{postfixedText}}
+<div [ngSwitch]="loadState" class="text-big">
+  <div *ngSwitchCase="LoadState.Error">
+    {{error}}
   </div>
-  <div class="result">
-    <i>Result: </i>{{resultText}}
+  <div *ngSwitchCase="LoadState.Calculating">
+    Calculating...
   </div>
-</div>
-<div *ngIf="calculating" [style.font-size]="'30px'">
-  <br/> calculating...
+  <div *ngSwitchCase="LoadState.Ready">
+    <div>
+      <i>Postfix notation: </i>{{postfixedText}}
+    </div>
+    <div>
+      <i>Result: </i>{{resultText}}
+    </div>
+  </div>
 </div>

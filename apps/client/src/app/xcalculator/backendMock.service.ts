@@ -2,27 +2,27 @@ import { BackendService } from './backend.service';
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class BackendMockService extends BackendService {
+export class BackendMockService {
 
-    convertToPostfix(expression: string): Promise<string> {
+    convertToPostfix(expression: string): Promise<(string | number)[]> {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 if (Math.round(Math.random()) === 1) {
-                    reject('Random error');
+                    reject('Random error while parsing');
                 } else {
-                    resolve('Some cool postfix expression');
+                    resolve([1, 2, 3, '-']);
                 }
             }, 500);
         });
     }
 
-    calculateExpression(postfixExpression: string): Promise<string> {
+    calculateExpression(postfixExpression: (string | number)[]): Promise<string> {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 if (Math.round(Math.random()) === 1) {
-                    reject('Random error');
+                    reject('Random error while calculating');
                 } else {
-                    resolve('Some cool result');
+                    resolve('2');
                 }
             }, 500);
         });

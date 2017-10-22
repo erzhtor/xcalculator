@@ -6,14 +6,14 @@ export class BackendService {
 
     constructor(private http: HttpClient) { }
 
-    convertToPostfix(expression: string) {
+    convertToPostfix(expression: string): Promise<(string | number)[]> {
         return this.http.
-            post<string>('/api/toPostfix', {
+            post<(string | number)[]>('/api/toPostfix', {
                 expression
             }).toPromise();
     }
 
-    calculateExpression(postfixExpression: string) {
+    calculateExpression(postfixExpression: (string | number)[]): Promise<string> {
         return this.http.
             post<string>('/api/calculate', {
                 epxression: postfixExpression
