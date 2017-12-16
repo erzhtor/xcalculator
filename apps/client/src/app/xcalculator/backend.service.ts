@@ -12,6 +12,9 @@ export class BackendService {
                 expression
             }).
             toPromise().
+            catch((err) => {
+                throw new Error('error while communicating with INFIX TO POSTFIX CONVERTER service');
+            }).
             then((response) => {
                 const { status, data } = response;
                 if (status === 'success') {
@@ -28,8 +31,11 @@ export class BackendService {
                 expression: postfixExpression
             }).
             toPromise().
+            catch((err) => {
+                throw new Error('error while communicating with POSTFIX CALCULATOR service');
+            }).
             then(response => {
-                const { status, data } = response;
+                const { status, data, message } = response;
                 if (status === 'success') {
                     return data;
                 } else {
