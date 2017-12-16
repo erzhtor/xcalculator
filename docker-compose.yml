@@ -1,0 +1,46 @@
+version: "3"
+services:
+    xcalc:
+        image: xcalc
+        ports:
+            - "4200:4200"
+        networks:
+            - overlay
+        deploy:
+            replicas: 1
+            resources:
+                limits:
+                    cpus: "1"
+                    memory: 300M
+            restart_policy:
+                condition: on-failure
+    infixToPostfix:
+        image: infix-to-postfix
+        ports:
+            - "3000:3000"
+        networks:
+            - overlay
+        deploy:
+            replicas: 1
+            resources:
+                limits:
+                    cpus: "1"
+                    memory: 300M
+            restart_policy:
+                condition: on-failure
+    postfixCalculator:
+        image: postfix-calculator
+        ports:
+            - "3001:3001"
+        networks:
+            - overlay
+        deploy:
+            replicas: 1
+            resources:
+                limits:
+                    cpus: "1"
+                    memory: 300M
+            restart_policy:
+                condition: on-failure
+networks:
+    overlay:

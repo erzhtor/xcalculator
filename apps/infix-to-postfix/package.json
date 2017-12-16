@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node src"
+    "start": "ts-node src",
+    "docker:build": "docker build -t infix-to-postfix . --force-rm",
+    "docker:run": "docker run -p 3000:3000 infix-to-postfix",
+    "docker:stop": "docker stop $(docker ps -a -q -f ancestor=infix-to-postfix)",
+    "docker:rm": "npm run docker:stop && docker rm $(docker ps -a -q -f ancestor=infix-to-postfix)"
   },
   "author": "Erzhan Torokulov",
   "license": "MIT",

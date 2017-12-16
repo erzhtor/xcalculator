@@ -4,12 +4,16 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --open",
+    "start": "ng serve --host 0.0.0.0 --port 4200",
     "hmr": "ng serve --open --hmr",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "docker:build": "docker build -t xcalc . --force-rm",
+    "docker:run": "docker run -p 4200:4200 xcalc",
+    "docker:stop": "docker stop $(docker ps -a -q -f ancestor=xcalc)",
+    "docker:rm": "npm run docker:stop && docker rm $(docker ps -a -q -f ancestor=xcalc)"
   },
   "private": true,
   "dependencies": {

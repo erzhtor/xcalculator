@@ -1,0 +1,23 @@
+{
+  "name": "xcalculator",
+  "version": "0.0.1",
+  "description": "_**NOT READY YET (will be removed when finished)**_",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docker:stack:init": "docker swarm init",
+    "docker:stack:deploy": "docker stack deploy -c docker-compose.yml xcalcApp",
+    "docker:stack:rm": "docker stack rm xcalcApp",
+    "docker:stack:leave": "docker swarm leave --force"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erzhtor/xcalculator.git"
+  },
+  "author": "Erzhan Torokulov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erzhtor/xcalculator/issues"
+  },
+  "homepage": "https://github.com/erzhtor/xcalculator#readme"
+}

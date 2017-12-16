@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node src"
+    "start": "ts-node src",
+    "docker:build": "docker build -t postfix-calculator . --force-rm",
+    "docker:run": "docker run -p 3001:3001 postfix-calculator",
+    "docker:stop": "docker stop $(docker ps -a -q -f ancestor=postfix-calculator)",
+    "docker:rm": "npm run docker:stop && docker rm $(docker ps -a -q -f ancestor=postfix-calculator)"
   },
   "author": "Erzhan Torokulov",
   "license": "MIT",
