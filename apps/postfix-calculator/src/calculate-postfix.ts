@@ -13,7 +13,7 @@ const calculatePostfix = (tokens: string[]) => {
                 operandStack.push(tmpResult);
                 break;
             default:
-                const value: number = parseFloat(token);
+                const value: number = Number(token);
                 if (isNaN(value)) {
                     throw new Error(`Operand "${token}" is NOT a number`)
                 }
