@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class BackendService {
@@ -8,7 +9,7 @@ export class BackendService {
 
     convertToPostfix(expression: string): Promise<(string | number)[]> {
         return this.http.
-            post<any>('//localhost:3000', {
+            post<any>(environment.infixToPostfixUrl, {
                 expression
             }).
             toPromise().
@@ -27,7 +28,7 @@ export class BackendService {
 
     calculateExpression(postfixExpression: (string | number)[]): Promise<string> {
         return this.http.
-            post<any>('//localhost:3001', {
+            post<any>(environment.postfixCalculatorUrl, {
                 expression: postfixExpression
             }).
             toPromise().
