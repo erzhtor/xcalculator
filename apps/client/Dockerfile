@@ -8,4 +8,4 @@ RUN npm i
 
 EXPOSE 3000
 
-CMD ["npm", "run", "start:test"]
+CMD ["npm", "run", "start:by:docker"]

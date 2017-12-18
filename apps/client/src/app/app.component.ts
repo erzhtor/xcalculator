@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
     title = 'Expression Calculator';
+    envName = environment.envName;
 }

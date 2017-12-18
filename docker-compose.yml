@@ -2,6 +2,8 @@ version: "3"
 services:
     xcalc:
         image: xcalc
+        environment:
+            - NODE_ENV=${NODE_ENV}
         ports:
             - "4200:4200"
         networks:

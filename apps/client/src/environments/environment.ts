@@ -7,4 +7,5 @@ export const environment = {
     production: false,
     infixToPostfixUrl: '//localhost:3000',
     postfixCalculatorUrl: '//localhost:3001',
+    envName: 'DEFAULT'
 };

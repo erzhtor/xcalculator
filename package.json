@@ -5,9 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run docker:stack:up:test",
+    "stop": "npm run docker:stack:down",
     "docker:stack:init": "docker swarm init",
-    "docker:stack:deploy": "docker stack deploy -c docker-compose.yml xcalcApp",
-    "docker:stack:rm": "docker stack rm xcalcApp",
+    "docker:stack:deploy": "docker stack up -c docker-compose.yml xcalcApp",
+    "docker:stack:up:test": "cross-env NODE_ENV=test npm run docker:stack:deploy",
+    "docker:stack:up:prod": "cross-env NODE_ENV=prod npm run docker:stack:deploy",
+    "docker:stack:down": "docker stack rm xcalcApp",
     "docker:stack:leave": "docker swarm leave --force"
   },
   "repository": {
@@ -19,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/erzhtor/xcalculator/issues"
   },
-  "homepage": "https://github.com/erzhtor/xcalculator#readme"
+  "homepage": "https://github.com/erzhtor/xcalculator#readme",
+  "devDependencies": {
+    "cross-env": "^5.1.1"
+  }
 }

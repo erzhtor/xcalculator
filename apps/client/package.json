@@ -4,9 +4,9 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "start:test": "ng serve --host 0.0.0.0 --port 4200 --environment=test",
-    "hmr": "ng serve --open --hmr",
+    "start": "ng serve --open",
+    "start:by:docker": "ng serve --host 0.0.0.0 --port 4200 --environment=$NODE_ENV",
+    "start:hmr": "ng serve --open --hmr",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

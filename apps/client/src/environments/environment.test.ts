@@ -6,5 +6,6 @@
 export const environment = {
     production: false,
     infixToPostfixUrl: '//0.0.0.0:3000',
-    postfixCalculatorUrl: '//0.0.0.0:3001'
+    postfixCalculatorUrl: '//0.0.0.0:3001',
+    envName: 'TEST'
 };
