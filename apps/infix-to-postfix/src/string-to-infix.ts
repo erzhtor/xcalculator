@@ -1,7 +1,7 @@
 
 const stringToInfix = (expression: string) => {
     return expression.
-        replace(/\s*([*\/\-+()])\s*/g, ' $& ').
+        replace(/\s*([*\/\-+()%])\s*/g, ' $& ').
         trim().
         split(/\s+/)
 }

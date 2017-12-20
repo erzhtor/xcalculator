@@ -4,6 +4,7 @@ type Precedence = {
 let precedence: Precedence = {
     '*': 3,
     '/': 3,
+    '%': 3,
     '+': 2,
     '-': 2,
     '(': 1,
@@ -32,6 +33,7 @@ const infixToPostfix = (tokens: string[]) => {
             case '-':
             case '*':
             case '/':
+            case '%':
                 while (opstack.length > 0) {
                     let lastOperator = opstack[opstack.length - 1];
                     if (precedence[lastOperator] < precedence[token])

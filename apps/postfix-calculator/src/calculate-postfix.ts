@@ -7,9 +7,10 @@ const calculatePostfix = (tokens: string[]) => {
             case '*':
             case '-':
             case '+':
+            case '%':
                 const secondOperand = operandStack.pop();
                 const firstOperand = operandStack.pop();
-                const tmpResult = eval(`${firstOperand}${token}${secondOperand}`);
+                const tmpResult = eval(`(${firstOperand})${token}(${secondOperand})`);
                 operandStack.push(tmpResult);
                 break;
             default:
