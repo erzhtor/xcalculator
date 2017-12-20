@@ -7,11 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run docker:stack:up:test",
     "stop": "npm run docker:stack:down",
-    "docker:stack:init": "docker swarm init",
+    "docker:build:all": "concurrently \"npm run docker:build:xcalc\" \"npm run docker:build:itp\" \"npm run docker:build:pc\"",
+    "docker:build:xcalc": "npm run --prefix apps/client docker:build",
+    "docker:build:itp": "npm run --prefix apps/infix-to-postfix docker:build",
+    "docker:build:pc": "npm run --prefix apps/postfix-calculator docker:build",
     "docker:stack:deploy": "docker stack up -c docker-compose.yml xcalcApp",
     "docker:stack:up:test": "cross-env NODE_ENV=test npm run docker:stack:deploy",
     "docker:stack:up:prod": "cross-env NODE_ENV=prod npm run docker:stack:deploy",
     "docker:stack:down": "docker stack rm xcalcApp",
+    "docker:stack:init": "docker swarm init",
     "docker:stack:leave": "docker swarm leave --force"
   },
   "repository": {
@@ -26,5 +30,8 @@
   "homepage": "https://github.com/erzhtor/xcalculator#readme",
   "devDependencies": {
     "cross-env": "^5.1.1"
+  },
+  "dependencies": {
+    "concurrently": "^3.5.1"
   }
 }
