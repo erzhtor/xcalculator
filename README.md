@@ -15,3 +15,5 @@ _**NOT READY YET (will be removed when finished)**_
 * **Angular ^4**
 * **Nodejs + Koa ^2**
 * **Typescript ^2**
+
+![List and Search of heroes](./docs/preview.gif)
