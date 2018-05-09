@@ -1,19 +1,35 @@
-_**NOT READY YET (will be removed when finished)**_
+## Xcalculator
 
-# X (Expression) Calculator
+Simple expression calculator.
 
-### Simple expression calculator consisting of 3 microservice applications
+> Built for microservice architecture demo purposes.
 
-* Frontend app: built using **Angular ^4**
-* Infix to postfix notation converter:
-* Postfix notation calculator
+> This project source can be used as a starter for microservice architectured applications, using **Docker**, **Angular** and **Koa\Typescript**
 
-**_All apps run in docker containers and overall service app is controlled via docker swarm_**
+### Get started
 
-## Tech stack
-* **Docker**
-* **Angular ^4**
-* **Nodejs + Koa ^2**
-* **Typescript ^2**
+_Simple expression calculator consists of 3 standalone applications_
+
+* **[Infix] to postfix notation converter**
+  * Responsible for converting [infix](https://en.wikipedia.org/wiki/Infix_notation) to [postfix notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation) expression.
+  * Built using **Koa** and **Typescript**
+* **Postfix notation calculator**
+  * Responsible for calculating postfix notation.
+  * Built using **Koa** and **Typescript**
+* **Client**
+  * Frontend application.
+  * Built using **Angular**
+
+> All apps have their own `Dockerfile`s.
+> Moreover, there exists `docker-compose.yml` file that describes overall application.
+
+### Built With
+
+* [Docker](https://www.docker.com/community-edition)
+* [Angular](https://angular.io/docs)
+* [Koa](https://github.com/koajs/koa)
+* [Typescript](https://www.typescriptlang.org/docs/home.html)
+
+#### Example screenshot
 
 ![List and Search of heroes](./docs/preview.gif)
