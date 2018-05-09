@@ -1,8 +1,4 @@
-## Xcalculator
-
-#### Example screenshot
-
-![List and Search of heroes](./docs/preview.gif)
+# Xcalculator
 
 Simple expression calculator.
 
@@ -10,7 +6,7 @@ Simple expression calculator.
 
 > This project source can be used as a starter for microservice architectured applications, using **Docker**, **Angular** and **Koa\Typescript**
 
-### Get started
+## Get started
 
 _Simple expression calculator consists of 3 standalone applications_
 
@@ -27,9 +23,13 @@ _Simple expression calculator consists of 3 standalone applications_
 > All apps have their own `Dockerfile`s.
 > Moreover, there exists `docker-compose.yml` file that describes overall application.
 
-### Built With
+## Built With
 
 * [Docker](https://www.docker.com/community-edition)
 * [Angular](https://angular.io/docs)
 * [Koa](https://github.com/koajs/koa)
 * [Typescript](https://www.typescriptlang.org/docs/home.html)
+
+## Examples
+
+![List and Search of heroes](./docs/preview.gif)
