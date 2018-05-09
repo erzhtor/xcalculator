@@ -1,5 +1,9 @@
 ## Xcalculator
 
+#### Example screenshot
+
+![List and Search of heroes](./docs/preview.gif)
+
 Simple expression calculator.
 
 > Built for microservice architecture demo purposes.
@@ -10,7 +14,7 @@ Simple expression calculator.
 
 _Simple expression calculator consists of 3 standalone applications_
 
-* **[Infix] to postfix notation converter**
+* **Infix to postfix notation converter**
   * Responsible for converting [infix](https://en.wikipedia.org/wiki/Infix_notation) to [postfix notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation) expression.
   * Built using **Koa** and **Typescript**
 * **Postfix notation calculator**
@@ -29,7 +33,3 @@ _Simple expression calculator consists of 3 standalone applications_
 * [Angular](https://angular.io/docs)
 * [Koa](https://github.com/koajs/koa)
 * [Typescript](https://www.typescriptlang.org/docs/home.html)
-
-#### Example screenshot
-
-![List and Search of heroes](./docs/preview.gif)
